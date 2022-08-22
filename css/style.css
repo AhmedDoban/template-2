@@ -131,14 +131,47 @@ Header
 .header .links > ul > li:not(:last-child) a {
   border-bottom: 1px solid #ddd;
 }
-.active {
+.header .links > ul > li:not(:last-child) a.active {
   color: var(--main-color);
 }
-.active:hover {
+.header .links > ul > li:not(:last-child) a.active:hover {
   padding: 10px !important;
   color: var(--main-color);
 }
+.header .links .menue_icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  transition: var(--main-transition);
+}
+.header .links .menue_icon > span {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: var(--main-transition);
+}
+.header .links .menue_icon.active {
+  transition-delay: 0.8s;
+  transform: rotate(45deg) translateY(15px) translateX(-5px);
+}
 
+.header .links .menue_icon.active > span:nth-child(2) {
+  width: 0;
+}
+.header .links .menue_icon.active > span:nth-child(2),
+.header .links .menue_icon.active > span:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.header .links .menue_icon.active > span:nth-child(1) {
+  transform: rotateY(10px);
+}
+.header .links .menue_icon.active > span:nth-child(3) {
+  transform: translateY(-10px) rotate(90deg) translateX(-4px);
+}
+.header .links .menue_icon.active > span {
+  background-color: red;
+}
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 Animation
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
