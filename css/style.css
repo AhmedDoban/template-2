@@ -38,8 +38,9 @@ a:hover {
 p {
   color: #545b6b;
   font-family: Arial;
-  font-size: 15px;
+  font-size: 18px;
   padding: 10px 5px;
+  line-height: 1.5;
 }
 li a {
   font-size: 17px;
@@ -79,6 +80,15 @@ li a:hover {
     width: 1170px;
   }
 }
+.back-to-top {
+  position: fixed;
+  z-index: 9999;
+  font-size: 35px;
+  color: var(--main-color);
+  bottom: 15px;
+  right: 15px;
+  display: none !important;
+}
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 Header
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
@@ -110,6 +120,7 @@ Header
   border-radius: 1rem;
   top: calc(100% + 15px);
   display: none;
+  z-index: 1;
 }
 .header .links > ul::before {
   position: absolute;
@@ -131,10 +142,10 @@ Header
 .header .links > ul > li:not(:last-child) a {
   border-bottom: 1px solid #ddd;
 }
-.header .links > ul > li:not(:last-child) a.active {
+.header .links > ul > li a.active {
   color: var(--main-color);
 }
-.header .links > ul > li:not(:last-child) a.active:hover {
+.header .links > ul > li a.active:hover {
   padding: 10px !important;
   color: var(--main-color);
 }
@@ -172,6 +183,67 @@ Header
 .header .links .menue_icon.active > span {
   background-color: red;
 }
+
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+Home
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.home {
+  background-image: url(../img/mountain.jpg);
+  width: 100%;
+  height: calc(100% - 70px);
+  background-position: top right;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.home .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.home h3 {
+  color: #26d381;
+  font-size: 50px;
+}
+.home p {
+  text-align: center;
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+features
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.features {
+  background-color: #f6f6f6;
+  position: relative;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-top);
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+.features .box {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 1rem;
+}
+.features .box i {
+  color: #26d381;
+}
+.features .box h3 {
+  margin: 20px auto;
+}
+.features .box p {
+  font-size: 15px;
+}
+
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 Animation
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
