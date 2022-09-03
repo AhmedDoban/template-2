@@ -222,13 +222,22 @@ Home
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 .home {
   background-image: url(../img/mountain.jpg);
+  background-size: cover;
   width: 100%;
   height: calc(100% - 70px);
-  background-position: top right;
+  background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
 }
+.home::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 .home .info {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,6 +251,7 @@ Home
 }
 .home p {
   text-align: center;
+  color:yellow;
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 features
