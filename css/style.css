@@ -85,6 +85,7 @@ li a:hover {
   bottom: 15px;
   right: 15px;
   display: none !important;
+  cursor: pointer;
 }
 /*main_titel*/
 .main_titel {
@@ -123,12 +124,34 @@ li a:hover {
   background-color: var(--main-background-color);
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Scroll bar
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #767676;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px #0bb3f550;
+  backdrop-filter: blur(50px);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 Header
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 .header {
-  background-color: #fff;
-  position: relative;
+  background-color: var(--main-background-color);
+  position: sticky;
+  top: 0;
   padding: 20px;
+  height: 70px;
+  z-index: 99999;
+  border-bottom: 1px solid #26d381;
 }
 .header .container {
   display: flex;
@@ -146,31 +169,35 @@ Header
   color: var(--main-color);
 }
 .header .links > ul {
-  position: absolute;
-  right: 0;
+  position: fixed;
+  right: -100%;
+  top: 70px;
+  background-color: #eee;
+  padding: 20px;
   min-width: 200px;
-  background-color: var(--main-background-color);
-  border-radius: 1rem;
-  top: calc(100% + 15px);
-  display: none;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 70px);
+  z-index: 9999;
+  transition: all 1s ease-in-out;
 }
-.header .links > ul::before {
-  position: absolute;
-  content: "";
-  border-style: solid;
-  border-width: 15px;
-  right: 3px;
-  border-color: transparent transparent #f6f6f6 transparent;
-  top: -25px;
+.header .links > ul > li {
+  width: 100%;
 }
 .header .links > ul > li > a {
   padding: 10px;
-  display: block;
+  width: 100%;
+  display: flex;
   transition: var(--main-transition);
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--main-p-color);
 }
 .header .links > ul > li > a:hover {
-  padding-left: 30px;
+  padding-left: 20px;
+  color: var(--main-color);
 }
 .header .links > ul > li:not(:last-child) a {
   border-bottom: 1px solid #ddd;
@@ -188,6 +215,7 @@ Header
   display: flex;
   flex-wrap: wrap;
   transition: var(--main-transition);
+  cursor: pointer;
 }
 .header .links .menue_icon > span {
   width: 100%;
@@ -214,7 +242,7 @@ Header
   transform: translateY(-10px) rotate(90deg) translateX(-4px);
 }
 .header .links .menue_icon.active > span {
-  background-color: red;
+  background-color: #26d381;
 }
 
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
@@ -251,7 +279,7 @@ Home
 }
 .home p {
   text-align: center;
-  color:yellow;
+  color: yellow;
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 features
@@ -416,14 +444,20 @@ About
 Contact 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 .contact .container {
-  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .contact .social,
 .contact .social .icon {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   gap: 40px;
+}
+.contact .social {
+  flex-direction: column;
 }
 .contact .social .icon a {
   background-color: var(--main-color);
@@ -433,7 +467,9 @@ Contact
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: rgb(85, 107, 89);
+  color: var(--main-background-color);
+  cursor: pointer;
+  transition: var(--main-transition);
 }
 .contact .social .icon a:hover {
   background-color: var(--main-color-hover);

@@ -4,8 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>templet 2</title>
+    <!-- Main Template Animation File AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Main Template CSS File -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/logo.png" />
     <!-- Render All Elements Normally -->
     <link rel="stylesheet" href="css/normalize.css" />
     <!-- Font Awesome Library -->
@@ -44,7 +47,7 @@
 
     <!--Start Home -->
     <div class="home">
-      <div class="info">
+      <div class="info" data-aos="zoom-in">
         <h3>Hello There !</h3>
         <p>We are leon - super creative & minimal Agancy web Template</p>
       </div>
@@ -53,7 +56,7 @@
 
     <!--Start features -->
     <div class="features section-general main-back-color" id="features">
-      <div class="container grid-general">
+      <div class="container grid-general" data-aos="fade-down">
         <div class="box">
           <i class="fas fa-magic fa-3x"></i>
           <h3>Tell Us Your Idea</h3>
@@ -86,7 +89,7 @@
     <div class="services section-general" id="services">
       <h1 class="main_titel">Services</h1>
       <p>Don't be busy , be productive</p>
-      <div class="container grid-general">
+      <div class="container grid-general" data-aos="fade-down">
         <div class="col">
           <!-- Start Service -->
           <div class="srv">
@@ -148,7 +151,7 @@
     <div class="portfolio section-general main-back-color" id="portfolio">
       <h1 class="main_titel">portfolio</h1>
       <p>If you do it right , it will last forever</p>
-      <div class="container grid-general">
+      <div class="container grid-general" data-aos="fade-down">
         <div class="box">
           <div class="img">
             <span>IMG</span>
@@ -195,7 +198,7 @@
     <div class="about section-general" id="about">
       <h1 class="main_titel">About</h1>
       <p>Less is more work</p>
-      <div class="container">
+      <div class="container" data-aos="fade-down">
         <div class="image"></div>
         <div class="text">
           <p>
@@ -220,7 +223,7 @@
     <div class="contact section-general main-back-color" id="contact">
       <h1 class="main_titel">Contact</h1>
       <p>We are born to create</p>
-      <div class="container">
+      <div class="container" data-aos="fade-down">
         <h1>Feel free to drop us a line at:</h1>
         <a href="mailto:leonagency@mail.com?subject=Contact" class="link"
           >leonagency@mail.com</a
@@ -242,6 +245,10 @@
     <div class="footer">&copy; 2021 <span>Leon</span> All Right Reserved</div>
     <!-- End Footer -->
     <!--JS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>
